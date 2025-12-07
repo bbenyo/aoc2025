@@ -6,6 +6,18 @@ def read_input(filename):
         input_line = [line.strip() for line in file]
     return input_line
 
+# Split by whitespace
+def read_input_split_whitespace(filename):
+    with open(filename, 'r') as file:
+        input_line = [line.strip().split() for line in file]
+    return input_line
+
+# Whitespace matters, no strip or splitting
+def read_input_raw(filename):
+    with open(filename, 'r') as file:
+        input_line = [line for line in file]
+    return input_line
+
 # Load puzzle input into two arrays from file, without newlines
 # A single empty line separates the input into the two arrays
 def read_input_two_sections(filename):
