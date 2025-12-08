@@ -12,6 +12,18 @@ def read_input_split_whitespace(filename):
         input_line = [line.strip().split() for line in file]
     return input_line
 
+# Split by anything
+def read_input_split(filename, separator, numbers=False):
+    with open(filename, 'r') as file:
+        input_data = []
+        for line in file:
+            iline = line.strip().split(separator)
+            if numbers:
+                for n in range(0, len(iline)):
+                    iline[n] = int(iline[n])
+            input_data.append(iline)
+    return input_data
+
 # Whitespace matters, no strip or splitting
 def read_input_raw(filename):
     with open(filename, 'r') as file:
